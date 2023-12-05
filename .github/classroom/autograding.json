@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "name": "01-login-ok.js",
+      "setup": "sudo apt update ; sudo apt install -y nodejs ; sudo npm install -g cordova ; cordova platform add browser ; sudo snap remove firefox ; sudo apt install software-properties-common -y ; sudo add-apt-repository -y ppa:mozillateam/ppa ; sudo apt install firefox-esr",
+      "run": "cd .test ; npm install ; node 01-login-ok.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "02-login-error-pwd",
+      "setup": "sudo apt update ; sudo apt install -y nodejs ; sudo npm install -g cordova ; cordova platform add browser ; sudo snap remove firefox ; sudo apt install software-properties-common -y ; sudo add-apt-repository -y ppa:mozillateam/ppa ; sudo apt install firefox-esr",
+      "run": "cd .test ; npm install ; node 02-login-error-pwd.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "03-login-error-user",
+      "setup": "sudo apt update ; sudo apt install -y nodejs ; sudo npm install -g cordova ; cordova platform add browser ; sudo snap remove firefox ; sudo apt install software-properties-common -y ; sudo add-apt-repository -y ppa:mozillateam/ppa ; sudo apt install firefox-esr",
+      "run": "cd .test ; npm install ; node 03-login-error-user.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "04-register-error-pwd",
+      "setup": "sudo apt update ; sudo apt install -y nodejs ; sudo npm install -g cordova ; cordova platform add browser ; sudo snap remove firefox ; sudo apt install software-properties-common -y ; sudo add-apt-repository -y ppa:mozillateam/ppa ; sudo apt install firefox-esr",
+      "run": "cd .test ; npm install ; node 04-register-error-pwd.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "05-register-ok",
+      "setup": "sudo apt update ; sudo apt install -y nodejs ; sudo npm install -g cordova ; cordova platform add browser ; sudo snap remove firefox ; sudo apt install software-properties-common -y ; sudo add-apt-repository -y ppa:mozillateam/ppa ; sudo apt install firefox-esr",
+      "run": "cd .test ; npm install ; node 05-register-ok.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "06-register-error-username",
+      "setup": "sudo apt update ; sudo apt install -y nodejs ; sudo npm install -g cordova ; cordova platform add browser ; sudo snap remove firefox ; sudo apt install software-properties-common -y ; sudo add-apt-repository -y ppa:mozillateam/ppa ; sudo apt install firefox-esr",
+      "run": "cd .test ; npm install ; node 06-register-error-username.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
