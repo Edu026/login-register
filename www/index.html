@@ -6,24 +6,96 @@
 	<title></title>
 </head>
 
-<h1>Login exercise</h1>
 <body>
-	<label for="usuari">Usuari</label><br>
-	<input type="usuari" id="usuari" name="Usuari"><br>
-	<label for="contrasenya">Contrasenya</label><br> 
-	<input type="contrasenya" id="contrasenya" name="Contrasenya">
+	<div>
+		<h1>Login exercise</h1>
 
-	<button type="button" onclick="fer_login()">Log In</button>
+			<label for="usuari">Usuari</label><br>
+			<input type="text" id="usuari" name="Usuari"><br>
+			<label for="contrasenya">Contrasenya</label><br> 
+			<input type="password" id="contrasenya" name="Contrasenya">
+			<button type="button" onclick="fer_login()">Login</button>
+	</div>
+	<div>
+		<h1>Registre</h1>
+
+		<label for="reg_usuari">Usuari</label><br>
+		<input type="text" id="reg_usuari" name="reg_suari"><br>
+
+		<label for="reg_email">Email</label><br>
+		<input type="text" id="reg_email" name="Email"><br>
+
+		<label for="reg_contrasenya_1">Contrasenya</label><br> 
+		<input type="password" id="reg_contrasenya_1" name="Contrasenya1"><br>
+
+		<label for="reg_contrasenya_2">Contrasenya</label><br> 
+		<input type="password" id="reg_contrasenya_2" name="Contrasenya2">
+
+		<button type="button" onclick="registra()">Registra</button>
+	</div>
 </body>
+	
+
 <script type="text/javascript">
-	const users = {"ieti":"cordova","edu":"amoros"};
-	var log_usuari = document.getElementsById('usuari');
-	var log_contrasenya = document.getElementsById('contrasenya');
+
+	const users = {"ieti":{ "password":"cordova", "email" : "ieti@gmail"},"edu":{"password":"amoros", "email" : "edu@gmail"}};
 
 	function fer_login(){
-		if ()
+		var log_usuari = document.getElementById('usuari').value;
+		var log_contrasenya = document.getElementById('contrasenya').value;
+
+
+		if (log_usuari in users){
+			if (log_contrasenya == users[log_usuari]["password"]){
+				alert("Login exitós");
+			}
+			else {
+				alert("Login incorrecte");
+			}
+		}
+		else{
+			alert("Login incorrecte");
+		}
 
 	}
+
+	function registra(){
+		var reg_usuari = document.getElementById('reg_usuari').value;
+		var reg_email = document.getElementById('reg_email').value;
+		var reg_contrasenya_1 = document.getElementById('reg_contrasenya_1').value;
+		var reg_contrasenya_2 = document.getElementById('reg_contrasenya_2').value;
+		var emailExists = false;
+
+		console.log(reg_contrasenya_1); 
+		console.log(reg_contrasenya_2);
+
+		if (reg_usuari in users){
+				alert("El nom o l'email ja existeix a la base de dades");
+				return;
+		}
+
+		if (reg_email !== null){
+			for (const key of Object.keys(users)) { 
+
+			   if (users[key]["email"] === reg_email){
+			   		alert("El nom o l'email ja existeix a la base de dades");Ç
+			   		return;
+			   }
+			}
+		}
+		
+		if (reg_contrasenya_1 === reg_contrasenya_2){
+			alert("Nou usuari registrat correctament");
+			users[reg_usuari] = {"password":reg_contrasenya_1,"email":reg_email};
+			console.log(users);
+			return;
+		}
+		else {
+ 			alert("Error en les contrasenyes");
+		}
+
+	}
+
 </script>
 
 </html>
